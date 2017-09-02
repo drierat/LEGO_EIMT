@@ -1,0 +1,83 @@
+<!DOCTYPE html>		
+<html lang="ca">			
+	<head>			
+		<!--<meta charset="utf-8">-->
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Historial</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/estils.css"/>
+		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>	
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/historial.js"></script>
+	</head>
+	<body id="principal"> <!--  Si vull carregar mes funcions, separar per una coma ex: onload="funcio1(), funcio2()" -->
+			<header>
+				<div class="row">
+					<div class="col-md-1">
+						<p id="pra">PRA:</p> 
+					</div>
+					<div class="col-md-9">
+							<p id="pra_actiu"> <script type="text/javascript"> mostraNom(); </script> </p>
+					</div> 													
+					<div class="col-md-2">
+						<div class="btn-group pull-right">
+							<button type="button" class="btn btn-default" id="estadistiques">
+							<span class="glyphicon glyphicon-stats" title="Estadistiques" ></span>
+							</button>
+							<button type="button" class="btn btn-default" id="surt">
+							<span class="glyphicon glyphicon-off" title="Surt"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="row cos">
+				<div id="dialeg"></div>
+				<div class="col-md-4 col-lateral">
+					<h1><div id="anyAnterior"></div></h1>
+					<div id="any1" class="btn-group-vertical btn-group-justified"></div>
+				</div>
+				<div class="col-md-4 col-central">
+					<h2>
+						<button type="button" class="btn btn-default pull-right">
+						<span class="glyphicon glyphicon-check" title="Validació"></span>
+						</button>
+					</h2>
+					<h1><div id="anyActual"></div></h1>
+					<div class="btn-group-vertical btn-group-justified"></div>
+					<div id="any2" class="btn-group-vertical btn-group-justified">
+					</div>
+					<h2>
+						<p>Assoliment:  ??<button type="button" class="btn btn-default pull-right" id="retorn">
+										  <span class="glyphicon glyphicon-comment" title="Retorn"></span>
+										  </button>
+						</p>
+					</h2>
+				</div>
+				<div class="col-md-4 col-lateral">
+					<h1><div id="anyPosterior"></div></h1>
+					<div class="btn-group-vertical btn-group-justified">
+					<div id="any3" class="btn-group-vertical btn-group-justified"></div>
+				</div>
+			</div>
+			<div class="row peu">
+				<div class="col-md-1" id="moveLeft">
+						<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-chevron-left" title="Any-1"> </span> 
+						</button>
+				</div>
+				<div class="col-md-1 pull-right" id="moveRight">
+						<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-chevron-right" title="Any+1"> </span> 
+						</button>
+				</div>
+			</div>
+			
+		<footer>
+		
+		</footer>
+		</div>
+   </body>
+</html>
