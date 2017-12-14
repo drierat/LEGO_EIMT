@@ -1,0 +1,266 @@
+
+				/** GENERAL **/
+
+body {
+	margin: 1.5em auto;
+	font: Helvetica, Verdana, Arial, sans-serif;
+	width:100%;	
+
+}
+
+header{
+	margin-bottom: 3em; 
+}
+ 
+footer {
+	padding-top: 6em;
+}
+
+footer p {
+	text-align: right;
+}
+
+				
+				/** INDEX **/
+				
+.logo img {  /*Logo EIMT*/
+	width: 90%;
+	margin-top: 2em;
+	margin-left: 2em;
+}
+
+#index #intro {
+	font-size: 1.5em;
+	text-align: justify;
+	margin: 2em 1em 2em 1em;
+}
+
+.construeix {
+	margin-top: 10%;
+	text-align: center;
+}
+.botoEntra{
+	text-decoration: none;
+	font-size:2em;
+	padding: 0.25em;
+    font-weight:bold;
+    color:white;
+    background:#0051A8;
+	border-radius: 0.25em;
+}
+
+.botoEntra:hover{
+	text-decoration: none;
+	background:white;
+    color:#0051A8;
+}
+
+				/** ACCES **/
+				
+#acces #elements{
+	margin-top: 10%;
+	text-align: center;
+}
+
+#acces #elements ul {
+	list-style: none;
+	margin-bottom: 3em;
+}
+
+#acces #elements li{
+	padding-bottom: 1em;
+}
+
+.nomUser, .passUser {
+	border-color: #0051A8;
+	font-size: 2em;
+	padding: 0.3em;
+	background-color:#EBEAEB;
+	border-radius: 0.25em;
+}
+
+				/** ROL **/
+
+#tipusAcces p {
+	margin: 2em 3em 1em 3em;
+	font-size: 5em;
+	text-align: center;
+	color: #0051A8;
+}
+
+#tipusAcces figure {
+	text-align: center;
+	margin-bottom: 3em;
+}
+
+#tipusAcces a {
+	margin: 0 1.5em 0 1.5em;
+}
+
+				/** HISTORIAL **/
+				
+#principal header{
+	border: 0.2em solid #0051A8;
+	height: 100%;
+}
+
+#pra {
+	font-size: 2em;
+	font-weight:bold;
+	color: #0051A8;
+	padding-top: 0.3em;
+	padding-left: 0.5em;
+}
+
+#pra_actiu{
+	font-size: 2em;
+	font-weight:bold;
+	color: #0051A8;
+	padding-top: 0.3em;
+	padding-left: 0.5em;
+}
+
+#user {
+	font-size: 1.5em;
+	font-weight:bold;
+	color: gray;
+	border: none;
+	margin-top: 0.5em;
+}
+
+.cos {
+	padding: 0 15px; /*Neutralitza margins de classe row*/
+}
+
+.col-central {
+	border: 0.2em solid #0051A8;
+	padding: 0.25em 3em 1em 3em;
+	border-radius: 0.5em;
+	margin:0 0.4em;
+	width: 33%;
+}
+
+.col-lateral {
+	border: 0.1em solid #E7E7E7;
+	padding: 0.25em 3em 1em 3em;
+	border-radius: 0.5em;
+	width: 33%;
+}	
+	
+.btn-group {
+	margin: 1em 1em 0 0;
+}
+
+.glyphicon-off {
+	color: red;
+}
+
+#principal h1 {
+	text-align: center;
+}
+
+.btn-group-vertical {
+	padding-top:0.5em;
+}
+
+.btn-group-vertical a{
+	margin-bottom:0.3em;
+	color: white;
+}
+
+.btn-group-vertical a:hover{
+    color:#0051A8;
+}
+
+.btn-group-vertical p{
+	padding-top:1em;
+	font-size:1.5em;
+}
+
+.botoPeça {
+	font-size:1.5em;
+	padding: 0.25em 2em 0.25em 2em;
+    font-weight:bold;
+	text-align: center;
+	background-color: #E7E7E7;
+	border-radius: 0.5em;
+	height: 2.3em;
+}
+
+.PeçaDoc {
+	background-color: #0000FF;	/*blau*/
+}
+
+.PeçaInn {
+	background-color: #FDD835;	/*groc*/
+}
+
+.PeçaRec {
+	background-color: #8BC34A;	/*verd*/
+}
+
+.PeçaGes {
+	background-color: #FF0000;	/*vermell*/
+}
+
+a.PeçaEnc  {
+	background-color: #EEEEEE;	/*blanc*/
+	color: black;
+}
+
+.PeçaVar {
+	background-color: #FF8000;	/*taronja*/
+}
+
+.PeçaBuida {
+	background-color: #606860;	/*gris verdos*/
+}
+
+.glyphicon-stats, .glyphicon-comment, .glyphicon-chevron-left, .glyphicon-chevron-right{
+	color: #0051A8;
+}
+	
+.peu{
+	clear: left;
+}
+	/** Estils quadre diàleg **/
+	
+.modal-dialog {
+  width: 85%;
+}
+
+.camps {
+  margin-bottom: 1em;
+}
+
+.camps label {
+	width: 20%;
+	clear: left;
+	float: left;
+}
+
+.modal-body p, .modal-body label{
+	font-size: 1.5em;
+	font-weight:bold;
+	color: #0051A8;
+}
+/*
+.modal-body select{
+	width: 50%;
+}
+*/
+.botoDialeg{
+    background:#0051A8;
+}
+
+.botoDisabled{
+    background-color: #808080;
+	cursor: default;
+}
+
+.botoDisabled:hover{
+    background-color: #808080;
+}
+
+
+

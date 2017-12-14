@@ -1,0 +1,41 @@
+<!DOCTYPE html>		
+<html lang="ca">			
+	<head>			
+		<!--<meta charset="utf-8">-->
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Accés a LEGO</title> 
+		<meta name="description" content="Acces a LEGO per EIMT" />
+		<meta name="keywords" content="EIMT, UOC, Tauler de tasques, acces"/>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/estils.css"/>
+	</head>
+	<body id="acces">	
+		<div class="container">
+			<header>
+				<figure class="logo">
+					<img src="./css/img/eimt.png" alt="Logo EIMT" title="EIMT">
+				</figure>
+			</header>		
+		  <div id="central"> 
+				<div id="elements">
+						<ul>
+							<li>
+							<input type="text" name="nom" class="nomUser" id="nomUser" value="" placeholder="Usuari" /> 
+							</li>
+							<li>
+							<input type="password" name="pass" class="passUser" id="passUser" value="" placeholder="Contrasenya" /> 
+							</li>
+							<li>
+							<input type="button" name="submit" id="submit" class="botoEntra" value="Entrar" onclick="validarUsuari()" /> 
+							</li>
+						</ul>
+				</div>
+		  </div>
+		  <footer>
+		  </footer>
+		</div>
+		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>	
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/acces.js"></script>
+   </body>
+</html>
