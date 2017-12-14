@@ -1,25 +1,26 @@
-<!DOCTYPE html>		
-<html lang="ca">			
-	<head>			
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
 		<!--<meta charset="utf-8">-->
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title>Historial</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="./css/estils.css"/>
-		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>	
+		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/acces.js"></script>
 		<script type="text/javascript" src="./js/historial.js"></script>
 	</head>
 	<body id="principal"> <!--  Si vull carregar mes funcions, separar per una coma ex: onload="funcio1(), funcio2()" -->
 			<header>
 				<div class="row">
 					<div class="col-md-1">
-						<p id="pra">PRA:</p> 
+						<p id="pra">PRA:</p>
 					</div>
 					<div class="col-md-9">
 							<p id="pra_actiu"> <script type="text/javascript"> mostraNom(); </script> </p>
-					</div> 													
+					</div>
 					<div class="col-md-2">
 						<div class="btn-group pull-right">
 							<button type="button" class="btn btn-default" id="estadistiques">
@@ -65,18 +66,18 @@
 			<div class="row peu">
 				<div class="col-md-1" id="moveLeft">
 						<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-chevron-left" title="Any-1"> </span> 
+						<span class="glyphicon glyphicon-chevron-left" title="Any-1"> </span>
 						</button>
 				</div>
 				<div class="col-md-1 pull-right" id="moveRight">
 						<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-chevron-right" title="Any+1"> </span> 
+						<span class="glyphicon glyphicon-chevron-right" title="Any+1"> </span>
 						</button>
 				</div>
 			</div>
-			
+
 		<footer>
-		
+
 		</footer>
 		</div>
    </body>
