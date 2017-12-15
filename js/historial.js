@@ -235,7 +235,7 @@ function mostraDialeg(pesaActual, usuari){
   	quadre += '<select name="tipusP" id="tipusP" title="Tipus de peça seleccionada (entre les definides als Estudis). Defineix el color de la peça en la visió general. Per exemple, Doc1, Inn4, Varis, etc.">';
   	iMax = tipusDePesaTots.length;
   	for (var i = 0; i<iMax; i++){
-		quadre += '<option value="' + tipusDePesaTots[i].idCategoria + '">' + tipusDePesaTots[i].idTipus + '</option>';
+		quadre += '<option value="' + tipusDePesaTots[i].idTipus + '">' + tipusDePesaTots[i].idTipus + '</option>';
   	}
 	quadre += '</select></div>';
 	quadre += '<div class="camps"><label for="aplicat">Aplicat a:</label>';
@@ -244,9 +244,11 @@ function mostraDialeg(pesaActual, usuari){
 	quadre += '<input type="text" name="compromis" id="compromis" size="50" value="" title="Inclou (si el té) un objectiu concret que sortirà reflexat al POP, com Enviament d´un JCR, Desplegament del nou MUXXX, Reducció de l´abandonament a l´assignatura AAA, Direcció del projecte de recerca RRR, etc."/></div>';
 	quadre += '<div class="camps"><label for="acompliment">Acompliment (%):</label>';
 	quadre += '<input type="text" name="acompliment" id="acompliment" value="" title="Percentatge d´acompliment assolit. Inicialment és zero i pot anar canviant al llarg de l´any i fins i tot desprès."/></div>';
-/*	quadre += '<div class="camps"><label for="validacio">Validació:</label>';
+/* Ara per ara no incloem la validació de les peces	
+	quadre += '<div class="camps"><label for="validacio">Validació:</label>';
 	quadre += '<select name="validacio" id="validacio" title="Responsable de validar "><option value="PRA">Pra</option><option value="DIR">Dir</option></select>';
-	quadre += '<input type="checkbox" name="validat" id="validat" value="1"/></div>'; */
+	quadre += '<input type="checkbox" name="validat" id="validat" value="1"/></div>'; 
+*/
 	quadre += '<div class="camps"><label for="comments">Altres:</label>';
 	quadre += '<textarea name="comments" id="comments" cols="100" rows="5" title="Comentaris addicionals; llista de varis, assigantures, articles, etc. corresponents a la peça; indicacions a la direcció; notes pròpies; seguiment, etc."></textarea></div>';
 	quadre += '<a id="okPesa"></a>';
