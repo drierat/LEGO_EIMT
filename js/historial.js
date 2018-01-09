@@ -228,14 +228,13 @@ function mostraDialeg(pesaActual, usuari){
 	quadre += '<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 	quadre += '<div class="modal-body">';
 	quadre += '<form class="form-horizontal">';
-	quadre += '<div class="camps"><label for="etiqueta">Etiqueta:</label>';
+	quadre += '<div class="camps"><label for="etiqueta">Etiqueta*:</label>';
 	quadre += '<input type="text" name="etiqueta" id="etiqueta" size="50" value="" title="Permet diferenciar les peces. Indica a qué es dedica aquell 10% de temps. És el text que es mostra en la pàgina d´historial (visió general de les peces per anys). Per exemple, Creació assignatura XXX pel semestre SSS o Direcció projecte d´innovació III, etc. "/> </div>';
-  	quadre += '<div class="camps"><label for="tipusP">Tipus:</label>';
-	//quadre += '<select name="tipusP" id="tipusP"><option value="">select </option>';
-  	quadre += '<select name="tipusP" id="tipusP" title="Tipus de peça seleccionada (entre les definides als Estudis). Defineix el color de la peça en la visió general. Per exemple, Doc1, Inn4, Varis, etc.">';
+  quadre += '<div class="camps"><label for="tipusP">Tipus*:</label>';
+  quadre += '<select name="tipusP" id="tipusP" title="Tipus de peça seleccionada (entre les definides als Estudis). Defineix el color de la peça en la visió general. Per exemple, Doc1, Inn4, Varis, etc.">';
   	iMax = tipusDePesaTots.length;
   	for (var i = 0; i<iMax; i++){
-		quadre += '<option value="' + tipusDePesaTots[i].idTipus + '">' + tipusDePesaTots[i].idTipus + '</option>';
+	     quadre += '<option value="' + tipusDePesaTots[i].idTipus + '">' + tipusDePesaTots[i].idTipus + '</option>';
   	}
 	quadre += '</select></div>';
 	quadre += '<div class="camps"><label for="aplicat">Aplicat a:</label>';
@@ -244,17 +243,19 @@ function mostraDialeg(pesaActual, usuari){
 	quadre += '<input type="text" name="compromis" id="compromis" size="50" value="" title="Inclou (si el té) un objectiu concret que sortirà reflexat al POP, com Enviament d´un JCR, Desplegament del nou MUXXX, Reducció de l´abandonament a l´assignatura AAA, Direcció del projecte de recerca RRR, etc."/></div>';
 	quadre += '<div class="camps"><label for="acompliment">Acompliment (%):</label>';
 	quadre += '<input type="text" name="acompliment" id="acompliment" value="" title="Percentatge d´acompliment assolit. Inicialment és zero i pot anar canviant al llarg de l´any i fins i tot desprès."/></div>';
-/* Ara per ara no incloem la validació de les peces	
-	quadre += '<div class="camps"><label for="validacio">Validació:</label>';
-	quadre += '<select name="validacio" id="validacio" title="Responsable de validar "><option value="PRA">Pra</option><option value="DIR">Dir</option></select>';
-	quadre += '<input type="checkbox" name="validat" id="validat" value="1"/></div>'; 
-*/
+  /* Ara per ara no incloem la validació de les peces
+  	quadre += '<div class="camps"><label for="validacio">Validació:</label>';
+  	quadre += '<select name="validacio" id="validacio" title="Responsable de validar "><option value="PRA">Pra</option><option value="DIR">Dir</option></select>';
+  	quadre += '<input type="checkbox" name="validat" id="validat" value="1"/></div>';
+  */
 	quadre += '<div class="camps"><label for="comments">Altres:</label>';
 	quadre += '<textarea name="comments" id="comments" cols="100" rows="5" title="Comentaris addicionals; llista de varis, assigantures, articles, etc. corresponents a la peça; indicacions a la direcció; notes pròpies; seguiment, etc."></textarea></div>';
 	quadre += '<a id="okPesa"></a>';
 	quadre += '<a href="" class="btn btn-primary botoDialeg">Cancel</a>';
 	quadre += '<a id="modifica"></a>';
 	quadre += '</form></div></div></div></div></div>';
+
+
 
 	// Crida al servei usuari/pesa per demanar les dades de la peça, si ja existia
 	var dadesCarregades = $.ajax({
@@ -270,8 +271,8 @@ function mostraDialeg(pesaActual, usuari){
 					$("#aplicat").val(result.aplicat);
 					$("#compromis").val(result.compromis);
 					$("#acompliment").val(result.acompliment);
-					$("#validacio").val(result.validacio);
-					$("#validat").val(result.validat);
+					//$("#validacio").val(result.validacio);
+					//$("#validat").val(result.validat);
 					$("#comments").val(result.comentaris);
 
 					var optionArray = [result.tipusConcat];
@@ -296,34 +297,47 @@ function mostraDialeg(pesaActual, usuari){
 		formatBotons(result);
 
 		$("#okPesa").click(function(){
+      var etiqueta=document.getElementById("etiqueta").value;
+      if (etiqueta == ''){
+        alert("El campo etiqueta está vacio y es OBLIGATORIO");
+        return false;
+      }
 				// AQUÍ VA EL CODI D'ALTA DE NOVA PEÇA
-			var etiqueta = $("#etiqueta").val();
-			var tipus = $("#tipusP").val();
-			var aplicat = $("#aplicat").val();
-			var compromis = $("#compromis").val();
-			var acompliment = $("#acompliment").val();
-			var validacio = $("#validacio").val();
-			var validat = $("#validat").val();
-			var comentaris = $("#comments").val();
+			//var etiqueta = $("#etiqueta").val();
+      var tipus = document.getElementById("tipusP").value;
+      if (tipus == ''){
+        alert("El campo tipus está vacio y es OBLIGATORIO");
+        return false;
+      }
+			var aplicat = document.getElementById("aplicat").value;
+			var compromis = document.getElementById("compromis").value;
+			var acompliment = document.getElementById("acompliment").value;
+			//var validacio = $("#validacio").val();
+			//var validat = $("#validat").val();
+			var comentaris = document.getElementById("comments").value;
 
 			if (peçaNova) { //D
 				var missatge = confirm("Vols crear una peça nova?");
+        //comprovem que es pasen els valors adequats
+        //alert(usuari + ' ' + anyPesaSubs + ' ' +  posicioPesaSubs + ' ' +  etiqueta + ' ' + tipus + ' ' + aplicat + ' ' + compromis + ' ' + acompliment + ' ' + comentaris);
+
 				if (missatge) { //Codi si es vol crear la peça
-					//D Falta comprobar que tots els camps IMPRESCINDIBLES estan completats
-					//D ...
 					$.ajax({
-//							url: 'http://lego.eimt.uoc.edu/restfullAPI/public/index.php/usuari/altaPeces', //D Jo li diria al servei "altaPesa"
+              //url: 'http://lego.eimt.uoc.edu/restfullAPI/public/index.php/usuari/altaPeces', //D Jo li diria al servei "altaPesa"
               url: 'http://localhost/public/index.php/usuari/altaPeces',
 							type : "POST",
 							dataType : 'json',
-							data: {nom:usuari,any:anyPesaSubs,posicio:posicioPesaSubs,etiqueta:etiqueta,tipus:tipus,aplicat:aplicat,compromis:compromis,acompliment:acompliment,validacio:validacio,validat:validat,comentaris:comentaris},
+							data: {nom:usuari,any:anyPesaSubs,posicio:posicioPesaSubs,etiqueta:etiqueta,tipus:tipus,aplicat:aplicat,compromis:compromis,acompliment:acompliment,comentaris:comentaris},
 							success : function(result) {
+                alert(result);
 								alert('Peça ' + result + 'creada correctament'); //D Més endavant treuria els missatges per evitar massa pop ups. Potser es pot fer un d'aquells que es difumina automàticament
 							},
 							error: function(xhr, resp, text) {
 								//D Aquí sí que s'hauria d'avisar que ha hagut un problema i no s'ha pogut crear la peça
-					  			console.log(xhr, resp, text)
-					  		}
+                //alert('problema al insertar a la BD')
+					  		console.log(xhr, resp, text)
+                alert(retorn);
+					  	}
 					}) //end ajax
 				}
 				else {
