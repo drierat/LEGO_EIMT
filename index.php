@@ -249,14 +249,14 @@ $app->post('/usuari/altaPeces', function (Request $request, Response $response){
 		{
 			//si ja existeix l'objecte a la taula fem update
 			$print = print('ja existeix');
-			$columna = "idPesa".$posicio;
+			$columna = "idPesa". $posicio;
 			$sqlItem2 = "UPDATE obj_any_pra SET '$columna'= 'Exemple' WHERE idPRA = '$usuari' and any = '$any'";
 			$queryAltaPesaPra = mysqli_query ($bd, $sqlItem2);
 			$altaPesaPra = mysqli_fetch_object($queryAltaPesaPra);
 		} else {
 			  //no existeix objecte per tant fem un insert
 			$print = print('no existeix');
-			$columna = "idPesa".$posicio;
+			$columna = "idPesa". $posicio;
 			$sqlItem2 = "INSERT INTO obj_any_pra ('idPRA', 'any', 'idPesa'.$posicio, 'retorn', 'estat') VALUES ('{$usuari}', '{$any}', '{NULL}','{NULL}','{NULL}')";
 			$queryAltaPesaPra = mysqli_query($bd, $sqlItem2);
 			$altaPresaPra = mysqli_fetch_object($queryAltaPesaPra);
@@ -273,8 +273,7 @@ $app->post('/usuari/altaPeces', function (Request $request, Response $response){
 		$sqlItem = "INSERT INTO pesa ('idPesa', 'idTipus', 'etiqueta', 'aplicat', 'compromis', 'acompliment', 'validacio', 'validat', 'comentaris', 'idPesa_modificada') VALUES ('{NULL}', '{$tipus}', '{$etiqueta}', '{$aplicat}', '{$compromis}', '{$acompliment}', '{NULL}', '{0}' '{$comentaris}', '{NULL}')";
 		$queryAltaPesa = mysqli_query ($bd, $sqlItem);
 		$altaPesa = mysqli_fetch_object($queryAltaPesa);
-		echo $print;
-		$retorn = $print;
+		$retorn = $etiqueta;
 		$response = $response->withJson($retorn, 200);
 		return($response);
 	  	}
