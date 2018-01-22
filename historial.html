@@ -59,8 +59,9 @@
 				</div>
 				<div class="col-md-4 col-lateral">
 					<h1><div id="anyPosterior"></div></h1>
-					<div class="btn-group-vertical btn-group-justified">
-					<div id="any3" class="btn-group-vertical btn-group-justified"></div>
+					<div class="btn-group-vertical btn-group-justified"></div>
+					<div id="any3" class="btn-group-vertical btn-group-justified">
+					</div>
 				</div>
 			</div>
 			<div class="row peu">
@@ -75,10 +76,48 @@
 						</button>
 				</div>
 			</div>
-
-		<footer>
-
-		</footer>
+ <!-- Diàleg ocult per a l'edició de peces. Es carregarà en fer clic a una peça.-->
+	<div id="qDialeg" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+				<div class="camps"><label for="etiqueta">Etiqueta:</label>
+					<input type="text" name="etiqueta" id="etiqueta" size="50" value="" title="Permet diferenciar les peces. Indica a qué es dedica aquell 10% de temps. És el text que es mostra en la pàgina d´historial (visió general de les peces per anys). Per exemple, Creació assignatura XXX pel semestre SSS o Direcció projecte d´innovació III, etc. ">
+				</div>
+  				<div class="camps"><label for="tipusP">Tipus:</label>	
+					<select name="tipusP" id="tipusP" title="Tipus de peça seleccionada (entre les definides als Estudis). Defineix el color de la peça en la visió general. Per exemple, Doc1, Inn4, Varis, etc."><option value="">select </option>
+ 	 				</select>
+  				</div>
+				<div class="camps"><label for="aplicat">Aplicat a:</label>
+					<input type="text" name="aplicat" id="aplicat" size="50" value="" title="Especifica (si cal) si s´aplica concretament a una assignatura AAA, un programa PPP, un projecte XXX, etc.">
+				</div>
+				<div class="camps"><label for="compromis">Compromís:</label>
+					<input type="text" name="compromis" id="compromis" size="50" value="" title="Inclou (si el té) un objectiu concret que sortirà reflexat al POP, com Enviament d´un JCR, Desplegament del nou MUXXX, Reducció de l´abandonament a l´assignatura AAA, Direcció del projecte de recerca RRR, etc.">
+				</div>
+				<div class="camps"><label for="acompliment">Acompliment (%):</label>
+					<input type="text" name="acompliment" id="acompliment" value="" title="Percentatge d´acompliment assolit. Inicialment és zero i pot anar canviant al llarg de l´any i fins i tot desprès.">
+				</div>
+				<!-- Ara per ara no incloem la validació de les peces	-->
+				<!--
+				<div class="camps"><label for="validacio">Validació:</label>
+					<select name="validacio" id="validacio" title="Responsable de validar "><option value="PRA">Pra</option><option value="DIR">Dir</option></select>
+					<input type="checkbox" name="validat" id="validat" value="1"/>
+				</div> 
+				-->
+				<div class="camps"><label for="comments">Altres:</label>
+					<textarea name="comments" id="comments" cols="100" rows="5" title="Comentaris addicionals; llista de varis, assigantures, articles, etc. corresponents a la peça; indicacions a la direcció; notes pròpies; seguiment, etc."></textarea>
+				</div>
+				<a id="okPesa" href="" class="btn btn-primary botoDialeg">OK</a>
+				<a id="cancelPesa" href="" class="btn btn-primary botoDialeg">Cancel</a>
+				</form>
+			</div>
+			</div>
 		</div>
+	</div>
+		<footer>
+		</footer>
+
    </body>
 </html>
